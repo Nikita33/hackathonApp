@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/compass-splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#1E5EF6"
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": [
       "**/*"
