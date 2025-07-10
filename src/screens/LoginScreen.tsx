@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,8 +7,6 @@ import {
   StyleSheet,
   Image,
   SafeAreaView,
-  KeyboardAvoidingView,
-  Platform,
   StatusBar,
   Dimensions,
 } from 'react-native';
@@ -16,16 +14,72 @@ import {
 const { width, height } = Dimensions.get('window');
 
 export default function LoginScreen() {
-  const [email, setEmail] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [password, setPassword] = useState('');
+  const [otpValues, setOtpValues] = useState(['', '', '', '', '', '']);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showOTP, setShowOTP] = useState(false);
+  const [isNextEnabled, setIsNextEnabled] = useState(false);
+  const [inputType, setInputType] = useState<'email' | 'phone' | null>(null);
+
+  // Email regex pattern
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // Phone regex pattern (supports various formats)
+  const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+
+  useEffect(() => {
+    // Enable Next button only if input has content and no secondary components are shown
+    setIsNextEnabled(inputValue.trim().length > 0 && !showPassword && !showOTP);
+  }, [inputValue, showPassword, showOTP]);
+
+  const validateInputType = (value: string) => {
+    if (emailRegex.test(value)) {
+      return 'email';
+    } else if (phoneRegex.test(value.replace(/\s+/g, ''))) {
+      return 'phone';
+    }
+    return null;
+  };
+
+  const handleNext = () => {
+    const type = validateInputType(inputValue);
+    setInputType(type);
+    
+    if (type === 'email') {
+      setShowPassword(true);
+      setShowOTP(false);
+    } else if (type === 'phone') {
+      setShowOTP(true);
+      setShowPassword(false);
+    }
+  };
 
   const handleLogin = () => {
-    console.log('Login pressed');
+    if (inputType === 'email' && password) {
+      console.log('Email login:', { email: inputValue, password });
+    } else if (inputType === 'phone' && otpValues.every(digit => digit !== '')) {
+      console.log('Phone login:', { phone: inputValue, otp: otpValues.join('') });
+    }
+  };
+
+  const handleOTPChange = (index: number, value: string) => {
+    if (value.length <= 1 && /^\d*$/.test(value)) {
+      const newOtpValues = [...otpValues];
+      newOtpValues[index] = value;
+      setOtpValues(newOtpValues);
+    }
   };
 
   const handleForgotPassword = () => {
     console.log('Forgot password pressed');
   };
+
+  const handleResendOTP = () => {
+    console.log('Resend OTP pressed');
+  };
+
+  const isInputEditable = !showPassword && !showOTP;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,56 +114,102 @@ export default function LoginScreen() {
         {/* Form Section */}
         <View style={styles.formContainer}>
           <View style={styles.inputSection}>
-            {/* Email Input */}
+            {/* Email/Phone Input */}
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabel}>Phone number/Email Address</Text>
-              <View style={styles.inputWrapper}>
+              <View style={[styles.inputWrapper, !isInputEditable && styles.inputDisabled]}>
                 <TextInput
-                  style={styles.textInput}
+                  style={[styles.textInput, !isInputEditable && styles.textInputDisabled]}
                   placeholder="annie@canon.com"
                   placeholderTextColor="#607A9F"
-                  value={email}
-                  onChangeText={setEmail}
+                  value={inputValue}
+                  onChangeText={setInputValue}
                   keyboardType="email-address"
                   autoCapitalize="none"
                   autoCorrect={false}
+                  editable={isInputEditable}
                 />
               </View>
             </View>
 
-            {/* Password Input */}
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabel}>Password</Text>
-              <View style={styles.inputWrapper}>
-                <TextInput
-                  style={styles.textInput}
-                  placeholder="•••••••••"
-                  placeholderTextColor="#607A9F"
-                  value={password}
-                  onChangeText={setPassword}
-                  secureTextEntry
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                />
+            {/* Password Input - Conditionally Rendered */}
+            {showPassword && (
+              <View style={styles.inputContainer}>
+                <Text style={styles.inputLabel}>Password</Text>
+                <View style={styles.inputWrapper}>
+                  <TextInput
+                    style={styles.textInput}
+                    placeholder="•••••••••"
+                    placeholderTextColor="#607A9F"
+                    value={password}
+                    onChangeText={setPassword}
+                    secureTextEntry
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                </View>
               </View>
-            </View>
+            )}
 
-            {/* Forgot Password */}
-            <TouchableOpacity style={styles.forgotPasswordButton} onPress={handleForgotPassword}>
-              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-            </TouchableOpacity>
+            {/* OTP Input - Conditionally Rendered */}
+            {showOTP && (
+              <View style={styles.otpContainer}>
+                <Text style={styles.inputLabel}>OTP</Text>
+                <View style={styles.otpRow}>
+                  {otpValues.map((value, index) => (
+                    <TextInput
+                      key={index}
+                      style={[
+                        styles.otpInput,
+                        value ? styles.otpInputFilled : null,
+                        index === 0 ? styles.otpInputActive : null
+                      ]}
+                      value={value}
+                      onChangeText={(text) => handleOTPChange(index, text)}
+                      keyboardType="numeric"
+                      maxLength={1}
+                      textAlign="center"
+                    />
+                  ))}
+                </View>
+                <TouchableOpacity style={styles.resendButton} onPress={handleResendOTP}>
+                  <Text style={styles.resendButtonText}>Resend OTP</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            {/* Forgot Password - Only show with password */}
+            {showPassword && (
+              <TouchableOpacity style={styles.forgotPasswordButton} onPress={handleForgotPassword}>
+                <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+              </TouchableOpacity>
+            )}
           </View>
 
-          {/* Login Button */}
-          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-            <Text style={styles.loginButtonText}>Login</Text>
+          {/* Next/Login Button */}
+          <TouchableOpacity 
+            style={[
+              styles.actionButton, 
+              !isNextEnabled && !showPassword && !showOTP && styles.actionButtonDisabled
+            ]} 
+            onPress={showPassword || showOTP ? handleLogin : handleNext}
+            disabled={!isNextEnabled && !showPassword && !showOTP}
+          >
+            <Text style={[
+              styles.actionButtonText,
+              !isNextEnabled && !showPassword && !showOTP && styles.actionButtonTextDisabled
+            ]}>
+              {showPassword || showOTP ? 'Login' : 'Next'}
+            </Text>
           </TouchableOpacity>
         </View>
 
         {/* Terms Text */}
-        <Text style={styles.termsText}>
-          By signing in you agree with our Terms of Service and accept our Privacy Policy
-        </Text>
+        <View style={styles.termsContainer}>
+          <Text style={styles.termsText}>
+            By signing in you agree with our Terms of Service and accept our Privacy Policy
+          </Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -194,7 +294,7 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     flex: 1,
-    gap: 145,
+    gap: 32,
   },
   inputSection: {
     width: 335,
@@ -217,6 +317,10 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: '#FFFFFF',
   },
+  inputDisabled: {
+    backgroundColor: '#F8F9FA',
+    borderColor: '#E0E0E0',
+  },
   textInput: {
     paddingHorizontal: 16,
     paddingVertical: 11,
@@ -225,6 +329,47 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     color: '#041A2F',
+  },
+  textInputDisabled: {
+    color: '#8E8E93',
+  },
+  otpContainer: {
+    gap: 12,
+  },
+  otpRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
+  otpInput: {
+    flex: 1,
+    height: 48,
+    borderWidth: 1,
+    borderColor: '#CFD7E2',
+    borderRadius: 6,
+    backgroundColor: '#FFFFFF',
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: 18,
+    color: '#041A2F',
+  },
+  otpInputFilled: {
+    borderColor: '#508DFF',
+    backgroundColor: '#FFFFFF',
+  },
+  otpInputActive: {
+    borderColor: '#508DFF',
+  },
+  resendButton: {
+    alignSelf: 'flex-end',
+    paddingVertical: 12,
+  },
+  resendButtonText: {
+    fontFamily: 'Inter',
+    fontWeight: '500',
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#246EF6',
   },
   forgotPasswordButton: {
     alignSelf: 'flex-end',
@@ -238,13 +383,15 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: '#246EF6',
   },
-  loginButton: {
+  actionButton: {
     backgroundColor: '#246EF6',
     borderRadius: 6,
     paddingHorizontal: 16,
     paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: 'center',
+    width: 335,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -254,12 +401,22 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 2,
   },
-  loginButtonText: {
+  actionButtonDisabled: {
+    backgroundColor: '#E0E0E0',
+  },
+  actionButtonText: {
     fontFamily: 'Inter',
     fontWeight: '500',
     fontSize: 16,
     lineHeight: 24,
     color: '#FFFFFF',
+  },
+  actionButtonTextDisabled: {
+    color: '#8E8E93',
+  },
+  termsContainer: {
+    marginTop: 'auto',
+    paddingTop: 20,
   },
   termsText: {
     fontFamily: 'Inter',
