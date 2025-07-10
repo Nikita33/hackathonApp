@@ -5,155 +5,82 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  ScrollView,
   Image,
-  Dimensions
+  SafeAreaView,
+  KeyboardAvoidingView,
+  Platform,
+  StatusBar,
+  Dimensions,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
-const LoginScreen = () => {
+export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Handle login logic here
     console.log('Login pressed');
   };
 
-  const handleAppleLogin = () => {
-    // Handle Apple login
-    console.log('Apple login pressed');
-  };
-
-  const handleGoogleLogin = () => {
-    // Handle Google login
-    console.log('Google login pressed');
-  };
-
   const handleForgotPassword = () => {
-    // Handle forgot password
     console.log('Forgot password pressed');
-  };
-
-  const handleJoinUs = () => {
-    // Handle join us
-    console.log('Join us pressed');
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Header Section */}
-        <View style={styles.header}>
-          {/* Background decorative elements */}
-          <View style={styles.bgElements}>
-            <View style={[styles.bgCircle, styles.bgCircle1]}>
-              <Image 
-                source={require('../../assets/bg-image-1.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-            <View style={[styles.bgCircle, styles.bgCircle2]}>
-              <Image 
-                source={require('../../assets/bg-image-2.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-            <View style={[styles.bgCircle, styles.bgCircle3]}>
-              <Image 
-                source={require('../../assets/bg-image-3.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-            <View style={[styles.bgCircle, styles.bgCircle4]}>
-              <Image 
-                source={require('../../assets/bg-image-4.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-            <View style={[styles.bgCircle, styles.bgCircle5]}>
-              <Image 
-                source={require('../../assets/bg-image-5.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-            <View style={[styles.bgCircle, styles.bgCircle6]}>
-              <Image 
-                source={require('../../assets/bg-image-6.png')} 
-                style={styles.bgImage}
-                resizeMode="cover"
-              />
-            </View>
-          </View>
-          
-          {/* Logo/Brand */}
-          <View style={styles.logoContainer}>
-            <Image 
-              source={require('../../assets/logo.png')} 
-              style={styles.logo}
-              resizeMode="contain"
-            />
-          </View>
-          
-          <Text style={styles.welcomeText}>Welcome Channel Partner</Text>
+      <StatusBar barStyle="dark-content" backgroundColor="#CFD7E2" />
+      
+      {/* Background Image */}
+      <Image source={require('../../assets/bg-image.png')} style={styles.backgroundImage} />
+      
+      {/* Header Section */}
+      <View style={styles.header}>
+        {/* Logo */}
+        <View style={styles.logoContainer}>
+          <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
+        </View>
+        
+        {/* Welcome Text */}
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeText}>
+            Welcome to the{'\n'}AI Generated App
+          </Text>
+        </View>
+      </View>
+
+      {/* Content Section */}
+      <View style={styles.content}>
+        {/* Title Section */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Login to Your Account</Text>
+          <Text style={styles.subtitle}>Securely log in to continue</Text>
         </View>
 
-        {/* Content Section */}
-        <View style={styles.content}>
-          <View style={styles.titleSection}>
-            <Text style={styles.title}>Login to Your Account</Text>
-            <Text style={styles.subtitle}>
-              Login to track your rewards, progress, and earnings.
-            </Text>
-          </View>
-
-          <View style={styles.formSection}>
-            {/* Social Login Buttons */}
-            <View style={styles.socialLoginSection}>
-              <TouchableOpacity style={styles.socialButton} onPress={handleAppleLogin}>
-                <Ionicons name="logo-apple" size={20} color="#041A2F" />
-                <Text style={styles.socialButtonText}>Sign in with Apple</Text>
-              </TouchableOpacity>
-              
-              <TouchableOpacity style={styles.socialButton} onPress={handleGoogleLogin}>
-                <Ionicons name="logo-google" size={20} color="#041A2F" />
-                <Text style={styles.socialButtonText}>Sign in with Google</Text>
-              </TouchableOpacity>
-            </View>
-
-            {/* Divider */}
-            <View style={styles.divider}>
-              <View style={styles.dividerLine} />
-              <Text style={styles.dividerText}>or signin with</Text>
-              <View style={styles.dividerLine} />
-            </View>
-
-            {/* Form Fields */}
-            <View style={styles.formFields}>
-              <View style={styles.fieldContainer}>
-                <Text style={styles.fieldLabel}>Email Address</Text>
+        {/* Form Section */}
+        <View style={styles.formContainer}>
+          <View style={styles.inputSection}>
+            {/* Email Input */}
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputLabel}>Phone number/Email Address</Text>
+              <View style={styles.inputWrapper}>
                 <TextInput
                   style={styles.textInput}
-                  placeholder="Eg. rai@xoxoday.com"
+                  placeholder="annie@canon.com"
                   placeholderTextColor="#607A9F"
                   value={email}
                   onChangeText={setEmail}
                   keyboardType="email-address"
                   autoCapitalize="none"
+                  autoCorrect={false}
                 />
               </View>
+            </View>
 
-              <View style={styles.fieldContainer}>
-                <Text style={styles.fieldLabel}>Password</Text>
+            {/* Password Input */}
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputLabel}>Password</Text>
+              <View style={styles.inputWrapper}>
                 <TextInput
                   style={styles.textInput}
                   placeholder="•••••••••"
@@ -161,120 +88,78 @@ const LoginScreen = () => {
                   value={password}
                   onChangeText={setPassword}
                   secureTextEntry
+                  autoCapitalize="none"
+                  autoCorrect={false}
                 />
               </View>
-
-              <TouchableOpacity onPress={handleForgotPassword}>
-                <Text style={styles.forgotPassword}>Forgot Password?</Text>
-              </TouchableOpacity>
             </View>
 
-            {/* Login Button */}
-            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-              <Text style={styles.loginButtonText}>Login</Text>
+            {/* Forgot Password */}
+            <TouchableOpacity style={styles.forgotPasswordButton} onPress={handleForgotPassword}>
+              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
             </TouchableOpacity>
-
-            {/* Terms and Privacy */}
-            <Text style={styles.termsText}>
-              By signing in you agree with our Terms of Service and accept our Privacy Policy
-            </Text>
-
-            {/* Join Us Section */}
-            <View style={styles.joinUsSection}>
-              <Text style={styles.newHereText}>New here? </Text>
-              <TouchableOpacity onPress={handleJoinUs}>
-                <Text style={styles.joinUsText}>Join us to unlock rewards</Text>
-              </TouchableOpacity>
-            </View>
           </View>
+
+          {/* Login Button */}
+          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+            <Text style={styles.loginButtonText}>Login</Text>
+          </TouchableOpacity>
         </View>
-      </ScrollView>
+
+        {/* Terms Text */}
+        <Text style={styles.termsText}>
+          By signing in you agree with our Terms of Service and accept our Privacy Policy
+        </Text>
+      </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#CFD7E2',
   },
+  backgroundImage: {
+    position: 'absolute',
+    top: -229,
+    left: -36.57,
+    width: 652,
+    height: 632,
+  },
   header: {
-    backgroundColor: '#CFD7E2',
+    paddingTop: 60,
     paddingHorizontal: 16,
-    paddingTop: 24,
     paddingBottom: 24,
     alignItems: 'center',
-    position: 'relative',
-  },
-  bgElements: {
-    position: 'absolute',
-    top: -10,
-    left: 0,
-    right: 0,
-    height: 180,
-    opacity: 0.7,
-  },
-  bgCircle: {
-    position: 'absolute',
-    borderRadius: 46,
-    opacity: 0.8,
-    overflow: 'hidden',
-  },
-  bgImage: {
-    width: '100%',
-    height: '100%',
-  },
-  bgCircle1: {
-    width: 29,
-    height: 29,
-    top: 130,
-    right: 25,
-  },
-  bgCircle2: {
-    width: 29,
-    height: 29,
-    top: 0,
-    left: 194,
-  },
-  bgCircle3: {
-    width: 36,
-    height: 36,
-    top: 111,
-    left: 0,
-  },
-  bgCircle4: {
-    width: 29,
-    height: 29,
-    top: 22,
-    left: 23,
-  },
-  bgCircle5: {
-    width: 36,
-    height: 36,
-    top: 41,
-    right: 67,
-  },
-  bgCircle6: {
-    width: 36,
-    height: 36,
-    top: 127,
-    left: 151,
+    justifyContent: 'center',
+    gap: 8,
   },
   logoContainer: {
-    marginBottom: 12,
+    width: 180,
+    height: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logo: {
     width: 180,
-    height: 45,
+    height: 45.75,
+  },
+  welcomeContainer: {
+    alignItems: 'center',
+    gap: 12,
   },
   welcomeText: {
-    fontSize: 18,
+    fontFamily: 'Inter',
     fontWeight: '600',
-    color: '#041A2F',
+    fontSize: 18,
+    lineHeight: 28,
     textAlign: 'center',
+    color: '#041A2F',
   },
   content: {
-    backgroundColor: '#ffffff',
+    flex: 1,
+    backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingHorizontal: 20,
@@ -288,93 +173,78 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.06,
     shadowRadius: 3,
     elevation: 5,
+    gap: 28,
   },
-  titleSection: {
-    marginBottom: 28,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#041A2F',
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 12,
-    color: '#394960',
-    lineHeight: 18,
-  },
-  formSection: {
-    gap: 20,
-  },
-  socialLoginSection: {
-    gap: 12,
-  },
-  socialButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderWidth: 1,
-    borderColor: '#CFD7E2',
-    borderRadius: 6,
-    backgroundColor: '#ffffff',
-    gap: 8,
-  },
-  socialButtonText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#041A2F',
-  },
-  divider: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    paddingHorizontal: 16,
-  },
-  dividerLine: {
-    flex: 1,
-    height: 1,
-    backgroundColor: '#CFD7E2',
-  },
-  dividerText: {
-    fontSize: 12,
-    color: '#273241',
-    letterSpacing: 0.25,
-  },
-  formFields: {
-    gap: 16,
-  },
-  fieldContainer: {
+  titleContainer: {
     gap: 4,
   },
-  fieldLabel: {
-    fontSize: 12,
+  title: {
+    fontFamily: 'Inter',
     fontWeight: '600',
+    fontSize: 18,
+    lineHeight: 28,
+    color: '#041A2F',
+  },
+  subtitle: {
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: 12,
+    lineHeight: 18,
     color: '#394960',
   },
-  textInput: {
+  formContainer: {
+    flex: 1,
+    gap: 145,
+  },
+  inputSection: {
+    width: 335,
+    alignSelf: 'center',
+    gap: 16,
+  },
+  inputContainer: {
+    gap: 4,
+  },
+  inputLabel: {
+    fontFamily: 'Inter',
+    fontWeight: '600',
+    fontSize: 12,
+    lineHeight: 18,
+    color: '#394960',
+  },
+  inputWrapper: {
     borderWidth: 1,
     borderColor: '#CFD7E2',
     borderRadius: 6,
+    backgroundColor: '#FFFFFF',
+  },
+  textInput: {
     paddingHorizontal: 16,
     paddingVertical: 11,
+    fontFamily: 'Inter',
+    fontWeight: '400',
     fontSize: 14,
+    lineHeight: 22,
     color: '#041A2F',
-    backgroundColor: '#ffffff',
   },
-  forgotPassword: {
-    fontSize: 14,
+  forgotPasswordButton: {
+    alignSelf: 'flex-end',
+    height: 20,
+    justifyContent: 'center',
+  },
+  forgotPasswordText: {
+    fontFamily: 'Inter',
     fontWeight: '500',
+    fontSize: 14,
+    lineHeight: 20,
     color: '#246EF6',
-    textAlign: 'right',
   },
   loginButton: {
     backgroundColor: '#246EF6',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
     borderRadius: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     alignItems: 'center',
+    justifyContent: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -385,32 +255,19 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   loginButtonText: {
-    fontSize: 16,
+    fontFamily: 'Inter',
     fontWeight: '500',
-    color: '#ffffff',
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#FFFFFF',
   },
   termsText: {
+    fontFamily: 'Inter',
+    fontWeight: '400',
     fontSize: 12,
-    color: '#041A2F',
     lineHeight: 18,
-    textAlign: 'center',
+    color: '#041A2F',
+    width: 335,
+    alignSelf: 'center',
   },
-  joinUsSection: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 4,
-  },
-  newHereText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#000000',
-  },
-  joinUsText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#246EF6',
-  },
-});
-
-export default LoginScreen; 
+}); 
