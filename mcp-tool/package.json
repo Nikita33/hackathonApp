@@ -1,0 +1,16 @@
+{
+  "name": "postman-mcp-server",
+  "version": "1.0.0",
+  "main": "postman-tool.js",
+  "type": "module",
+  "scripts": {
+    "start": "node postman-tool.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "newman": "^6.2.1",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.22.4"
+  }
+} 
