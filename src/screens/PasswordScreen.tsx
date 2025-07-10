@@ -108,7 +108,7 @@ export default function PasswordScreen({ route, navigation }: PasswordScreenProp
         {/* Welcome Text */}
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>
-            Welcome to the{'\n'}Channel Partner App
+            Welcome to{'\n'}Channel Partner App
           </Text>
         </View>
       </View>

@@ -204,7 +204,7 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
         {/* Welcome Text */}
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>
-            Welcome to the{'\n'}AI Generated App
+            Welcome to {'\n'}Channel Partner App
           </Text>
         </View>
       </View>
