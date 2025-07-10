@@ -70,7 +70,7 @@ export default function PasswordScreen({ route, navigation }: PasswordScreenProp
         if (result.setCookieHeaders) {
           console.log('Set-Cookie headers stored for next APIs:', result.setCookieHeaders);
         }
-        navigation.navigate('HomeScreen', { 
+        navigation.navigate('Home', { 
           authToken: authToken, // Use the original auth token from identity validation
           setCookieHeaders: result.setCookieHeaders 
         });
