@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Channel Partner App",
+    "name": "ChannelPartners",
     "slug": "channel-partner-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/compass-app-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/compass-splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1E5EF6"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,14 +20,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/compass-adaptive-icon.png",
+        "backgroundColor": "#1E5EF6"
       },
       "package": "com.channelpartner.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/compass-app-icon.png"
     },
-    "plugins": []
+    "plugins": [
+      "expo-font"
+    ]
   }
-} 
+}
