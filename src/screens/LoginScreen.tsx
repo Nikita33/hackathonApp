@@ -9,7 +9,10 @@ import {
   SafeAreaView,
   StatusBar,
   Dimensions,
+  Alert,
 } from 'react-native';
+import axios from 'axios';
+import { API_CONFIG, preRequestScript, processResponse, ValidateIdentityResponse } from '../utils/apiConfig';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,6 +24,7 @@ export default function LoginScreen() {
   const [showOTP, setShowOTP] = useState(false);
   const [isNextEnabled, setIsNextEnabled] = useState(false);
   const [inputType, setInputType] = useState<'email' | 'phone' | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Email regex pattern
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,16 +46,90 @@ export default function LoginScreen() {
     return null;
   };
 
-  const handleNext = () => {
+  // Validate Identity API call
+  const validateIdentityAPI = async (identifier: string, type: 'email' | 'phone'): Promise<ValidateIdentityResponse> => {
+    try {
+      setIsLoading(true);
+      
+      // Use pre-request script to generate headers and transform request
+      const headers = preRequestScript.generateHeaders();
+      const requestData = preRequestScript.transformRequest(identifier, type);
+      
+      // Validate request before sending
+      if (!preRequestScript.validateRequest(requestData)) {
+        throw new Error('Request validation failed');
+      }
+
+      console.log('Making Validate Identity API call:', {
+        endpoint: API_CONFIG.VALIDATE_IDENTITY_ENDPOINT,
+        data: requestData,
+        headers: headers
+      });
+
+      const response = await axios.post(API_CONFIG.VALIDATE_IDENTITY_ENDPOINT, requestData, {
+        headers: headers,
+        timeout: API_CONFIG.TIMEOUT,
+      });
+
+      console.log('Validate Identity API response:', response.data);
+
+      // Process successful response
+      return processResponse.handleSuccess(response);
+
+    } catch (error) {
+      console.error('Validate Identity API error:', error);
+      
+      // Process error response
+      return processResponse.handleError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleNext = async () => {
     const type = validateInputType(inputValue);
     setInputType(type);
     
-    if (type === 'email') {
-      setShowPassword(true);
-      setShowOTP(false);
-    } else if (type === 'phone') {
-      setShowOTP(true);
-      setShowPassword(false);
+    if (type) {
+      // Call the Validate Identity API
+      const result = await validateIdentityAPI(inputValue, type);
+      
+      if (result.success) {
+        // API call successful, proceed with UI updates
+        if (type === 'email') {
+          setShowPassword(true);
+          setShowOTP(false);
+        } else if (type === 'phone') {
+          setShowOTP(true);
+          setShowPassword(false);
+        }
+        
+        // You can also show a success message
+        Alert.alert('Success', result.message || 'Identity validated successfully');
+      } else {
+        // API call failed, show error message
+        Alert.alert(
+          'Validation Error', 
+          result.error || 'Failed to validate identity. Please try again.',
+          [
+            {
+              text: 'OK',
+              onPress: () => {
+                // Reset states on error
+                setInputType(null);
+                setShowPassword(false);
+                setShowOTP(false);
+              }
+            }
+          ]
+        );
+      }
+    } else {
+      // Invalid input format
+      Alert.alert(
+        'Invalid Input', 
+        'Please enter a valid email address or phone number.'
+      );
     }
   };
 
@@ -190,16 +268,16 @@ export default function LoginScreen() {
           <TouchableOpacity 
             style={[
               styles.actionButton, 
-              !isNextEnabled && !showPassword && !showOTP && styles.actionButtonDisabled
+              (!isNextEnabled && !showPassword && !showOTP) || isLoading ? styles.actionButtonDisabled : null
             ]} 
             onPress={showPassword || showOTP ? handleLogin : handleNext}
-            disabled={!isNextEnabled && !showPassword && !showOTP}
+            disabled={(!isNextEnabled && !showPassword && !showOTP) || isLoading}
           >
             <Text style={[
               styles.actionButtonText,
-              !isNextEnabled && !showPassword && !showOTP && styles.actionButtonTextDisabled
+              (!isNextEnabled && !showPassword && !showOTP) || isLoading ? styles.actionButtonTextDisabled : null
             ]}>
-              {showPassword || showOTP ? 'Login' : 'Next'}
+              {isLoading ? 'Validating...' : (showPassword || showOTP ? 'Login' : 'Next')}
             </Text>
           </TouchableOpacity>
         </View>
