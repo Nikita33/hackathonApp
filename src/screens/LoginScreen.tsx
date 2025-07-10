@@ -10,13 +10,18 @@ import {
   StatusBar,
   Dimensions,
   Alert,
+  Animated,
 } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
 import axios from 'axios';
-import { API_CONFIG, preRequestScript, processResponse, ValidateIdentityResponse } from '../utils/apiConfig';
+import { API_CONFIG, validateIdentityAPI, ValidateIdentityResponse } from '../utils/apiConfig';
+import { RootStackParamList } from '../types/navigation';
 
 const { width, height } = Dimensions.get('window');
 
-export default function LoginScreen() {
+type LoginScreenProps = StackScreenProps<RootStackParamList, 'LoginScreen'>;
+
+export default function LoginScreen({ navigation }: LoginScreenProps) {
   const [inputValue, setInputValue] = useState('');
   const [password, setPassword] = useState('');
   const [otpValues, setOtpValues] = useState(['', '', '', '', '', '']);
@@ -25,6 +30,10 @@ export default function LoginScreen() {
   const [isNextEnabled, setIsNextEnabled] = useState(false);
   const [inputType, setInputType] = useState<'email' | 'phone' | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [authToken, setAuthToken] = useState<string | null>(null);
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const snackbarOpacity = useState(new Animated.Value(0))[0];
 
   // Email regex pattern
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,90 +55,109 @@ export default function LoginScreen() {
     return null;
   };
 
-  // Validate Identity API call
-  const validateIdentityAPI = async (identifier: string, type: 'email' | 'phone'): Promise<ValidateIdentityResponse> => {
+  const showSnackbar = (message: string) => {
+    setSnackbarMessage(message);
+    setSnackbarVisible(true);
+    
+    // Animate snackbar in
+    Animated.timing(snackbarOpacity, {
+      toValue: 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      hideSnackbar();
+    }, 3000);
+  };
+
+  const hideSnackbar = () => {
+    // Animate snackbar out
+    Animated.timing(snackbarOpacity, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start(() => {
+      setSnackbarVisible(false);
+    });
+  };
+
+  // Validate Identity API call - implementing exact pre-request script logic
+  const callValidateIdentityAPI = async (userInput: string) => {
     try {
       setIsLoading(true);
       
-      // Use pre-request script to generate headers and transform request
-      const headers = preRequestScript.generateHeaders();
-      const requestData = preRequestScript.transformRequest(identifier, type);
+      // Create request as per Postman collection
+      const requestData = validateIdentityAPI.createRequest(userInput);
       
-      // Validate request before sending
-      if (!preRequestScript.validateRequest(requestData)) {
-        throw new Error('Request validation failed');
-      }
-
       console.log('Making Validate Identity API call:', {
         endpoint: API_CONFIG.VALIDATE_IDENTITY_ENDPOINT,
         data: requestData,
-        headers: headers
+        headers: API_CONFIG.HEADERS
       });
 
-      const response = await axios.post(API_CONFIG.VALIDATE_IDENTITY_ENDPOINT, requestData, {
-        headers: headers,
-        timeout: API_CONFIG.TIMEOUT,
-      });
+      // Make API call with exact headers and data from Postman collection
+      const response = await axios.post<ValidateIdentityResponse>(
+        API_CONFIG.VALIDATE_IDENTITY_ENDPOINT, 
+        requestData, 
+        {
+          headers: API_CONFIG.HEADERS,
+          timeout: API_CONFIG.TIMEOUT,
+        }
+      );
 
       console.log('Validate Identity API response:', response.data);
 
-      // Process successful response
-      return processResponse.handleSuccess(response);
-
-    } catch (error) {
+      // Process response according to pre-request script logic
+      const result = validateIdentityAPI.processResponse(response.data);
+      
+      if (result.success) {
+        // Store auth token for next API calls
+        setAuthToken(result.authToken);
+        
+        if (result.showPasswordInput && result.authToken) {
+          // Navigate to Password Screen (login_type === "0")
+          navigation.navigate('PasswordScreen', {
+            userEmail: userInput,
+            authToken: result.authToken,
+            userDetails: result.userDetails,
+          });
+        } else if (result.showOtpInput) {
+          // Show OTP input (login_type === "3")
+          setShowOTP(true);
+          setShowPassword(false);
+        }
+      } else {
+        // Show error message from API
+        showSnackbar(result.error || 'Validation failed');
+      }
+    } catch (error: any) {
       console.error('Validate Identity API error:', error);
       
-      // Process error response
-      return processResponse.handleError(error);
+      // Handle network or other errors
+      const errorMessage = error.response?.data?.message || 
+                          error.response?.data?.error || 
+                          error.message || 
+                          'Network error. Please try again.';
+      showSnackbar(errorMessage);
     } finally {
       setIsLoading(false);
     }
   };
+
+
 
   const handleNext = async () => {
     const type = validateInputType(inputValue);
     setInputType(type);
     
     if (type) {
-      // Call the Validate Identity API
-      const result = await validateIdentityAPI(inputValue, type);
-      
-      if (result.success) {
-        // API call successful, proceed with UI updates
-        if (type === 'email') {
-          setShowPassword(true);
-          setShowOTP(false);
-        } else if (type === 'phone') {
-          setShowOTP(true);
-          setShowPassword(false);
-        }
-        
-        // You can also show a success message
-        Alert.alert('Success', result.message || 'Identity validated successfully');
-      } else {
-        // API call failed, show error message
-        Alert.alert(
-          'Validation Error', 
-          result.error || 'Failed to validate identity. Please try again.',
-          [
-            {
-              text: 'OK',
-              onPress: () => {
-                // Reset states on error
-                setInputType(null);
-                setShowPassword(false);
-                setShowOTP(false);
-              }
-            }
-          ]
-        );
-      }
+      // Valid input - call Validate Identity API
+      await callValidateIdentityAPI(inputValue);
     } else {
-      // Invalid input format
-      Alert.alert(
-        'Invalid Input', 
-        'Please enter a valid email address or phone number.'
-      );
+      // Invalid input - show snackbar as requested
+      showSnackbar('Please provide a valid email or mobile number!');
     }
   };
 
@@ -289,6 +317,20 @@ export default function LoginScreen() {
           </Text>
         </View>
       </View>
+
+      {/* Snackbar */}
+      {snackbarVisible && (
+        <Animated.View 
+          style={[
+            styles.snackbar,
+            {
+              opacity: snackbarOpacity,
+            }
+          ]}
+        >
+          <Text style={styles.snackbarText}>{snackbarMessage}</Text>
+        </Animated.View>
+      )}
     </SafeAreaView>
   );
 }
@@ -504,5 +546,31 @@ const styles = StyleSheet.create({
     color: '#041A2F',
     width: 335,
     alignSelf: 'center',
+  },
+  snackbar: {
+    position: 'absolute',
+    bottom: 100,
+    left: 20,
+    right: 20,
+    backgroundColor: '#323232',
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  snackbarText: {
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#FFFFFF',
+    textAlign: 'center',
   },
 }); 

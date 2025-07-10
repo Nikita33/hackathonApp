@@ -1,142 +1,200 @@
-// API Configuration for Validate Identity API
-// Replace these values with your actual Postman collection details
-
-export interface ValidateIdentityRequest {
-  identifier: string;
-  type: 'email' | 'phone';
-  // Add other fields from your Postman collection here
-}
-
-export interface ValidateIdentityResponse {
-  success: boolean;
-  message?: string;
-  data?: any;
-  error?: string;
-}
+// API Configuration based on Postman Collection
+// Validate Identity API from Compass collection
 
 export const API_CONFIG = {
-  // TODO: Replace with your actual API endpoint from Postman
-  VALIDATE_IDENTITY_ENDPOINT: 'https://your-api-endpoint.com/validate-identity',
+  // Endpoint from Postman collection
+  VALIDATE_IDENTITY_ENDPOINT: 'https://staging.getcompass.ai/chef/api/public/validateUserIdentity',
+  VALIDATE_PASSWORD_ENDPOINT: 'https://staging.getcompass.ai/chef/api/public/validatePassword',
   
-  // TODO: Add your API headers from Postman collection
+  // Headers from Postman collection (with pltfm: "10" as per pre-request script)
   HEADERS: {
     'Content-Type': 'application/json',
-    // Add other headers from your Postman collection here
-    // Example:
-    // 'Authorization': 'Bearer your-token',
-    // 'X-API-Key': 'your-api-key',
+    'sec-ch-ua-platform': '"macOS"',
+    'a_t': '',
+    'Referer': '',
+    'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
+    'lng': 'en',
+    'sec-ch-ua-mobile': '?0',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+    'pltfm': '10', // CRITICAL: Pre-request script says "Make sure when the Validate Password API is called, send the header pltfm === 10"
   },
   
   // Request timeout in milliseconds
   TIMEOUT: 10000,
 };
 
-// Pre-request script functions
-// TODO: Add your Postman pre-request script logic here
-export const preRequestScript = {
-  // Add any environment variables or dynamic values here
-  generateHeaders: () => {
-    // Example: Generate timestamp, nonce, or other dynamic values
-    return {
-      ...API_CONFIG.HEADERS,
-      'X-Timestamp': new Date().toISOString(),
-      // Add other dynamic headers
-    };
-  },
-  
-  // Add any data transformation logic from your pre-request script
-  transformRequest: (identifier: string, type: 'email' | 'phone') => {
-    return {
-      identifier,
-      type,
-      // Add other required fields based on your Postman collection
-      // Example:
-      // timestamp: new Date().toISOString(),
-      // clientId: 'your-client-id',
-    };
-  },
-  
-  // Add any validation logic from your pre-request script
-  validateRequest: (request: ValidateIdentityRequest): boolean => {
-    // Add your validation logic here
-    return true;
-  },
-};
-
-// Response processing functions
-export const processResponse = {
-  // Handle successful responses
-  handleSuccess: (response: any): ValidateIdentityResponse => {
-    return {
-      success: true,
-      data: response.data,
-      message: response.message || 'Identity validated successfully',
-    };
-  },
-  
-  // Handle error responses
-  handleError: (error: any): ValidateIdentityResponse => {
-    return {
-      success: false,
-      error: error.response?.data?.message || 
-             error.response?.data?.error || 
-             error.message || 
-             'An error occurred',
-      message: 'Failed to validate identity',
-    };
-  },
-};
-
-// Instructions for setup:
-/*
-TO COMPLETE THE SETUP:
-
-1. Open your Postman collection
-2. Find the "Validate Identity" API request
-3. Copy the request URL and update API_CONFIG.VALIDATE_IDENTITY_ENDPOINT
-4. Copy all headers from your Postman request and update API_CONFIG.HEADERS
-5. If you have a pre-request script, copy the logic to preRequestScript functions
-6. Update the request/response interfaces based on your API structure
-7. Test the API call
-
-EXAMPLE POSTMAN COLLECTION STRUCTURE:
-{
-  "info": {
-    "name": "Validate Identity API"
-  },
-  "item": [
-    {
-      "name": "Validate Identity",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"identifier\": \"{{identifier}}\",\n  \"type\": \"{{type}}\"\n}"
-        },
-        "url": {
-          "raw": "{{baseUrl}}/validate-identity",
-          "host": ["{{baseUrl}}"],
-          "path": ["validate-identity"]
-        }
-      },
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "exec": [
-              "// Your pre-request script here",
-              "console.log('Pre-request script executed');"
-            ]
-          }
-        }
-      ]
-    }
-  ]
+// Request/Response interfaces based on Postman collection
+export interface ValidateIdentityRequest {
+  variables: {
+    user_input: string;
+  };
 }
-*/ 
+
+export interface ValidateIdentityResponse {
+  data: {
+    validateUserIdentity: {
+      success: number;
+      errcode: string;
+      error: string;
+      error_msg: string | null;
+      errcode_message_id: string | null;
+      error_message_id: string;
+      errcode_message_id_required_params: any;
+      user_details: {
+        first_name: string;
+        user_login_type: string;
+        company_data: any;
+        steps_completed: any;
+        route: any;
+      };
+      auth_token: string;
+    };
+  };
+}
+
+// Validate Password API interfaces
+export interface ValidatePasswordRequest {
+  variables: {
+    password: string;
+  };
+}
+
+export interface ValidatePasswordResponse {
+  data: {
+    validatePassword: {
+      success: number;
+      errcode: string;
+      error: string;
+      error_msg: string | null;
+      errcode_message_id: string | null;
+      error_message_id: string;
+      errcode_message_id_required_params: any;
+      // Note: Pre-request script says "there is not auth token in response just validate for success"
+      // So no auth_token field in validatePassword response
+    };
+  };
+}
+
+// API Helper Functions
+export const validateIdentityAPI = {
+  // Create request body as per Postman collection
+  createRequest: (userInput: string): ValidateIdentityRequest => {
+    return {
+      variables: {
+        user_input: userInput
+      }
+    };
+  },
+  
+  // Process response according to pre-request script logic
+  processResponse: (response: ValidateIdentityResponse) => {
+    // Follow the exact path: data.data.validateUserIdentity (as per pre-request script)
+    const validateUserIdentity = response.data.validateUserIdentity;
+    
+    if (validateUserIdentity.success === 0) {
+      // Error case
+      return {
+        success: false,
+        error: validateUserIdentity.error_msg || 'Validation failed',
+        showPasswordInput: false,
+        showOtpInput: false,
+        authToken: null,
+      };
+    } else if (validateUserIdentity.success === 1) {
+      // Success case
+      const userLoginType = validateUserIdentity.user_details.user_login_type;
+      const authToken = validateUserIdentity.auth_token;
+      
+      if (userLoginType === "0") {
+        // Show password input page
+        return {
+          success: true,
+          error: null,
+          showPasswordInput: true,
+          showOtpInput: false,
+          authToken: authToken,
+          userDetails: validateUserIdentity.user_details,
+        };
+      } else if (userLoginType === "3") {
+        // Show OTP input page
+        return {
+          success: true,
+          error: null,
+          showPasswordInput: false,
+          showOtpInput: true,
+          authToken: authToken,
+          userDetails: validateUserIdentity.user_details,
+        };
+      } else {
+        // Handle unexpected login_type cases
+        return {
+          success: false,
+          error: 'Unexpected login type. Please contact support.',
+          showPasswordInput: false,
+          showOtpInput: false,
+          authToken: null,
+        };
+      }
+    } else {
+      // Unexpected success value
+      return {
+        success: false,
+        error: 'Unexpected response format.',
+        showPasswordInput: false,
+        showOtpInput: false,
+        authToken: null,
+      };
+    }
+  },
+};
+
+// Validate Password API Helper Functions
+export const validatePasswordAPI = {
+  // Create request body as per Postman collection with base64 encoded password
+  createRequest: (password: string): ValidatePasswordRequest => {
+    // CRITICAL: Pre-request script says "For encoding password use btoa"
+    // Example: "Test@123" becomes "VGVzdEAxMjM=" (base64 encoded)
+    const encodedPassword = btoa(password);
+    return {
+      variables: {
+        password: encodedPassword
+      }
+    };
+  },
+  
+  // Process response according to exact pre-request script logic
+  processResponse: (response: ValidatePasswordResponse, fullResponse?: any) => {
+    // Follow the exact path: data.data.validatePassword (as per pre-request script)
+    const validatePassword = response.data.validatePassword;
+    
+    if (validatePassword.success === 0) {
+      // Error case - Invalid password (exact logic from pre-request script)
+      // "If success === 0 inside validatePassword in data → Show error: 'Invalid Password' → Stay on the same page"
+      return {
+        success: false,
+        error: 'Invalid Password', // Exact error message from pre-request script
+        setCookieHeaders: null,
+      };
+    } else if (validatePassword.success === 1) {
+      // Success case - Login successful (exact logic from pre-request script)
+      // "If success === 1 inside validatePassword in data → Login successful → Store the response.request.responseheaders.Set-Cookie → Redirect the user to the Home page"
+      // Note: Pre-request script says "there is not auth token in response just validate for success, if 1 then move forward"
+      
+      // Extract Set-Cookie headers as specified in pre-request script
+      const setCookieHeaders = fullResponse?.headers?.['set-cookie'] || fullResponse?.headers?.['Set-Cookie'] || null;
+      
+      return {
+        success: true,
+        error: null,
+        setCookieHeaders: setCookieHeaders, // Store Set-Cookie headers for next APIs as per pre-request script
+      };
+    } else {
+      // Unexpected success value
+      return {
+        success: false,
+        error: 'Unexpected response format.',
+        setCookieHeaders: null,
+      };
+    }
+  },
+}; 

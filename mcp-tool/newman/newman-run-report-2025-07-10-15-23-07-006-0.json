@@ -1,0 +1,5121 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "6b11256e-25bb-4896-9621-9122b284e5a9"
+    },
+    "item": [
+      {
+        "id": "311d7ef1-4022-4b36-8687-3e5f8fe0b308",
+        "name": "Validate identity",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validateUserIdentity"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": ""
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"variables\": {\n        \"user_input\": \"pavan+edit@xoxoday.com\"\n    }\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [
+          {
+            "_": {
+              "postman_previewlanguage": ""
+            },
+            "id": "98df5be4-411c-4ec2-9b42-8fd5fcd9eae2",
+            "name": "Validate identity Example",
+            "originalRequest": {
+              "url": {
+                "protocol": "https",
+                "path": [
+                  "chef",
+                  "api",
+                  "public",
+                  "validateUserIdentity"
+                ],
+                "host": [
+                  "staging",
+                  "getcompass",
+                  "ai"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "sec-ch-ua-platform",
+                  "value": "\"macOS\""
+                },
+                {
+                  "key": "a_t",
+                  "value": ""
+                },
+                {
+                  "key": "Referer",
+                  "value": ""
+                },
+                {
+                  "key": "sec-ch-ua",
+                  "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+                },
+                {
+                  "key": "lng",
+                  "value": "en"
+                },
+                {
+                  "key": "sec-ch-ua-mobile",
+                  "value": "?0"
+                },
+                {
+                  "key": "User-Agent",
+                  "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "pltfm",
+                  "value": "8"
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"variables\": {\n        \"user_input\": \"pavan+edit@xoxoday.com\"\n    }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "header": [],
+            "body": "{\n    \"data\": {\n        \"validateUserIdentity\": {\n            \"success\": 1,\n            \"errcode\": \"\",\n            \"error\": \"\",\n            \"error_msg\": null,\n            \"errcode_message_id\": null,\n            \"error_message_id\": \"\",\n            \"errcode_message_id_required_params\": null,\n            \"user_details\": {\n                \"first_name\": \"Pavan 1\",\n                \"user_login_type\": \"0\",\n                \"company_data\": null,\n                \"steps_completed\": null,\n                \"route\": null\n            },\n            \"auth_token\": \"eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6Il85bk14WjVsemVVNUVub0JmVTNxcEVWbEJhQjl6YmN3VEMwbkw1aHBDZmMiLCJ5Ijoia2pHT2FqVHhvVzN2dk9uc09sT1R6NEZTS3BfbzJGMGtKRUNCZ0YzTzBrQSJ9fQ..j9gCRHMUmdI0GIi2HbGoLQ.ylZ78c30QzDRdJQGSo5Tu2ZoB1g6v3d0njshKyCeXh5j9q_t6gx28bVXCEqtO64hlZcNl_pCQhtJHYukZG_pWxP_XgZC4BkpWXDRFBfU4hq-ENe5crefOQ_9vylbDQdlQfiotHMi3E2pQL20_oDjEELYO7EEsJV1bu7kaXymP0avSrDSvDqjF5O0BHCpY40Mx9_NVuOSxwCnm7tTZ8NuR89sIYywnxfIw767uieeLWlLKg90-gmOvbk6gERLOHleDrv-Le1YKadqvxfOG-AmLa32ftvv3wiIJp_IKKQEZphXJyghXuF4kqYR1HdIi68xjS9-ETVjAshmMlIAlj2rjc4P92k21iG0O2EbGaK_4HkyCUL4r4zFdNBIO12uHaR4VsZw3rvwQ9vHxbXDXx-ZKMJnzM-PnRvvDET5d4dzFySRCX6EPv55Znd_7MC2Kpr-YRLaIdMloQn-NUEo0ub068aUP9_u8CQmYemTXqqUAeiFhKtlZHYdVfCutUWBnJaZN1a0ZtMx5DHqMQeI8TXKu-iS5peOwJp-DSQMfdBF8UbTC0PgROw0Pn4BY3sxOhM9UIr8NQsrYGtcbdZfeNPoaBt_O6Zd2L5GwF-zmlOV8oQbsxkXrg64adRStqKWyI2lRKXGqwF99kvGOc5j8AzkvSbtmt3owttMzSTbZSLCLEDBUjcusHgUF1r_TMqbC9Pmdgqi43cqLZW8id46z2IiSzLT6U5P1_mNrMJ6At2fjxI.Cqvmydz2c9jfrlp3rm7geQ\"\n        }\n    }\n}",
+            "cookie": [
+              {
+                "expires": null
+              }
+            ],
+            "responseTime": null
+          }
+        ],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "a78f9d6b-f3b9-4ad5-8de1-a5a7f34b8c67",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "/*Implement an API endpoint (e.g., POST /validate-user) that accepts a request and returns a structured response based on the following logic:",
+                "Make sure when the Validate Identity API is called, send the header pltfm === 10",
+                "",
+                "The API receives user identity input (like email/username).",
+                "",
+                "It performs identity validation and returns an object validateUserIdentity.",
+                "",
+                "Based on validateUserIdentity:",
+                "",
+                "Use the example created in Validate Indentity API for the response structure and then implement the below logic according to the response data shown in the Validate identity Example",
+                "",
+                "If success === 0, return an error response with error_msg.",
+                "",
+                "If success === 1, do the following:",
+                "   - The path should be data.data.validateUserIdentity",
+                "   - Read data.validateUserIdentity.user_login_type inside user_details and auth_token.",
+                "   - If data.validateUserIdentity.user_details.user_login_type === \"0\", return a response indicating show_password_input: true. Show the input password page",
+                "   - If data.validateUserIdentity.user_details.user_login_type === \"3\", return a response indicating show_otp_input: true.Show the input OTP page",
+                "   - Return the auth_token as part of the response, so it can be passed to the next step (e.g., password validation).",
+                "   ",
+                "",
+                "Handle unexpected login_type cases with a generic error message.*/"
+              ],
+              "_lastExecutionId": "16f56ec5-b51b-4eae-acf9-15d8be65a33f"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "32d56452-756f-4c85-84e5-7f6ba8ac2ff3",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                ""
+              ],
+              "_lastExecutionId": "0b5b66d9-5d54-4a72-bb90-77b6d3bd829c"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      },
+      {
+        "id": "dd06b5d5-afa6-442c-8b0c-f73d01543921",
+        "name": "validatePassword",
+        "request": {
+          "description": {
+            "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validatePassword"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"variables\":{\"password\":\"Test@123\"}}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "363f95b8-d406-463a-acbb-0dc520de6ae0",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "// Make sure when the Validate Password API is called, send the header pltfm === 10",
+                "// For encoding password use btoa",
+                "//Handle Validate Password Response:",
+                "//  The path should be data.data.validatePassword",
+                "// - If success === 0  inside validatePassword in data           ",
+                "//     → Show error: \"Invalid Password\"",
+                "//     → Stay on the same page",
+                "// - If success === 1 inside validatePassword in data          ",
+                "//     → Login successful",
+                "//     → Store the generated token",
+                "//     → Use this token in the next API call to fetch User Details",
+                "//     → Redirect the user to the Home page",
+                ""
+              ],
+              "_lastExecutionId": "924cb3e2-6921-4405-9e00-00f3e7908237"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      },
+      {
+        "id": "b624009d-3bf3-458f-924c-2de847c77ac6",
+        "name": "validateOtp",
+        "request": {
+          "description": {
+            "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validateOtp"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"variables\":{\"otp\":66666}}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "363f95b8-d406-463a-acbb-0dc520de6ae0",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "// Handle Validate Password Response:",
+                "// - If success === 0  inside validateUPassword in data           ",
+                "//     → Show error: \"Invalid Password\"",
+                "//     → Stay on the same page",
+                "// - If success === 1 inside validateUPassword in data          ",
+                "//     → Login successful",
+                "//     → Store the generated token",
+                "//     → Use this token in the next API call to fetch User Details",
+                "//     → Redirect the user to the Home page",
+                ""
+              ],
+              "_lastExecutionId": "a86ae4b6-cec0-43ce-a0ef-7d97bfdd3660"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      },
+      {
+        "id": "0dd7e18a-7b67-48da-8681-28d1fbaad77f",
+        "name": "User details",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "graph",
+              "admin"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"query\":\"admin.query.personaldetail_query_fetch_encoded\",\"tag\":\"admin\",\"variables\":{\"add_data\":\"\"}}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "bd9c0f2b-4fe2-437f-bcf4-bbbb984e0804",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "// Make sure when the User details API is called, send the header pltfm === 10",
+                "// On \"My Profile\" click:",
+                "// → Call the User Details API",
+                "// → Pass the stored token (from Validate Password API) in the request header or body as required",
+                "// → If token is invalid or expired:",
+                "//     → Show error: \"Session expired, please log in again\"",
+                "// → If token is valid and user details are returned:",
+                "//     → Display user profile information",
+                ""
+              ],
+              "_lastExecutionId": "50454037-5d55-4ef2-8d53-1153818c1cca"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      },
+      {
+        "id": "78d34398-4e1d-471d-a736-e21f76bcfd60",
+        "name": "user logout",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "logout"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+            },
+            {
+              "key": "accept-language",
+              "value": "en-GB,en;q=0.9"
+            },
+            {
+              "key": "priority",
+              "value": "u=0, i"
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "sec-fetch-dest",
+              "value": "document"
+            },
+            {
+              "key": "sec-fetch-mode",
+              "value": "navigate"
+            },
+            {
+              "key": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "key": "sec-fetch-user",
+              "value": "?1"
+            },
+            {
+              "key": "upgrade-insecure-requests",
+              "value": "1"
+            },
+            {
+              "key": "user-agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "origin",
+              "value": "https://staging.getcompass.ai"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "if-modified-since",
+              "value": "Wed, 09 Jul 2025 07:24:08 GMT"
+            },
+            {
+              "key": "if-none-match",
+              "value": "W/\"bed-197ee1205c0\""
+            },
+            {
+              "key": "hash",
+              "value": "acc6af62a9fa38a0431edac1dee2b8f1516c9633"
+            },
+            {
+              "key": "Origin",
+              "value": "https://staging.getcompass.ai"
+            },
+            {
+              "key": "sec-fetch-storage-access",
+              "value": "none"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "fb888f40-60d6-44c0-9cf3-a327fdd1d42f",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                "// Make sure when the User details API is called, send the header pltfm === 10",
+                "// On \"Log Out\" click:",
+                "// → Call the User Details API",
+                "// → Pass the stored token (from Validate Password API) in the request header or body as required",
+                "// → If token is invalid or expired:",
+                "//     → Show error: \"Session expired, please log in again\"",
+                "// → If token is valid and user details are returned:",
+                "//     → Display user profile information"
+              ],
+              "_lastExecutionId": "362fce41-9701-4791-8d1e-890555fb7b8f"
+            }
+          }
+        ],
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        }
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "6b11256e-25bb-4896-9621-9122b284e5a9",
+      "name": "Compass",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "id": "a71414d7-cee1-40f4-91bd-5294dbef0c73",
+    "values": []
+  },
+  "globals": {
+    "id": "2c9c61ba-abf1-4f99-aacd-c2c60cc493bc",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 342.4,
+      "responseMin": 221,
+      "responseMax": 729,
+      "responseSd": 194.77946503674355,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1752160985206,
+      "completed": 1752160987002
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "da5eced4-d3ca-4c30-98e4-950d6248d823",
+          "httpRequestId": "5de3da2e-3d9f-426b-bf63-72e9841a3b92"
+        },
+        "item": {
+          "id": "311d7ef1-4022-4b36-8687-3e5f8fe0b308",
+          "name": "Validate identity",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "chef",
+                "api",
+                "public",
+                "validateUserIdentity"
+              ],
+              "host": [
+                "staging",
+                "getcompass",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "a_t",
+                "value": ""
+              },
+              {
+                "key": "Referer",
+                "value": ""
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+              },
+              {
+                "key": "lng",
+                "value": "en"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "pltfm",
+                "value": "8"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"variables\": {\n        \"user_input\": \"pavan+edit@xoxoday.com\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "_": {
+                "postman_previewlanguage": ""
+              },
+              "id": "98df5be4-411c-4ec2-9b42-8fd5fcd9eae2",
+              "name": "Validate identity Example",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "chef",
+                    "api",
+                    "public",
+                    "validateUserIdentity"
+                  ],
+                  "host": [
+                    "staging",
+                    "getcompass",
+                    "ai"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"macOS\""
+                  },
+                  {
+                    "key": "a_t",
+                    "value": ""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": ""
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+                  },
+                  {
+                    "key": "lng",
+                    "value": "en"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "pltfm",
+                    "value": "8"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"variables\": {\n        \"user_input\": \"pavan+edit@xoxoday.com\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "header": [],
+              "body": "{\n    \"data\": {\n        \"validateUserIdentity\": {\n            \"success\": 1,\n            \"errcode\": \"\",\n            \"error\": \"\",\n            \"error_msg\": null,\n            \"errcode_message_id\": null,\n            \"error_message_id\": \"\",\n            \"errcode_message_id_required_params\": null,\n            \"user_details\": {\n                \"first_name\": \"Pavan 1\",\n                \"user_login_type\": \"0\",\n                \"company_data\": null,\n                \"steps_completed\": null,\n                \"route\": null\n            },\n            \"auth_token\": \"eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6Il85bk14WjVsemVVNUVub0JmVTNxcEVWbEJhQjl6YmN3VEMwbkw1aHBDZmMiLCJ5Ijoia2pHT2FqVHhvVzN2dk9uc09sT1R6NEZTS3BfbzJGMGtKRUNCZ0YzTzBrQSJ9fQ..j9gCRHMUmdI0GIi2HbGoLQ.ylZ78c30QzDRdJQGSo5Tu2ZoB1g6v3d0njshKyCeXh5j9q_t6gx28bVXCEqtO64hlZcNl_pCQhtJHYukZG_pWxP_XgZC4BkpWXDRFBfU4hq-ENe5crefOQ_9vylbDQdlQfiotHMi3E2pQL20_oDjEELYO7EEsJV1bu7kaXymP0avSrDSvDqjF5O0BHCpY40Mx9_NVuOSxwCnm7tTZ8NuR89sIYywnxfIw767uieeLWlLKg90-gmOvbk6gERLOHleDrv-Le1YKadqvxfOG-AmLa32ftvv3wiIJp_IKKQEZphXJyghXuF4kqYR1HdIi68xjS9-ETVjAshmMlIAlj2rjc4P92k21iG0O2EbGaK_4HkyCUL4r4zFdNBIO12uHaR4VsZw3rvwQ9vHxbXDXx-ZKMJnzM-PnRvvDET5d4dzFySRCX6EPv55Znd_7MC2Kpr-YRLaIdMloQn-NUEo0ub068aUP9_u8CQmYemTXqqUAeiFhKtlZHYdVfCutUWBnJaZN1a0ZtMx5DHqMQeI8TXKu-iS5peOwJp-DSQMfdBF8UbTC0PgROw0Pn4BY3sxOhM9UIr8NQsrYGtcbdZfeNPoaBt_O6Zd2L5GwF-zmlOV8oQbsxkXrg64adRStqKWyI2lRKXGqwF99kvGOc5j8AzkvSbtmt3owttMzSTbZSLCLEDBUjcusHgUF1r_TMqbC9Pmdgqi43cqLZW8id46z2IiSzLT6U5P1_mNrMJ6At2fjxI.Cqvmydz2c9jfrlp3rm7geQ\"\n        }\n    }\n}",
+              "cookie": [
+                {
+                  "expires": null
+                }
+              ],
+              "responseTime": null
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "a78f9d6b-f3b9-4ad5-8de1-a5a7f34b8c67",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "/*Implement an API endpoint (e.g., POST /validate-user) that accepts a request and returns a structured response based on the following logic:",
+                  "Make sure when the Validate Identity API is called, send the header pltfm === 10",
+                  "",
+                  "The API receives user identity input (like email/username).",
+                  "",
+                  "It performs identity validation and returns an object validateUserIdentity.",
+                  "",
+                  "Based on validateUserIdentity:",
+                  "",
+                  "Use the example created in Validate Indentity API for the response structure and then implement the below logic according to the response data shown in the Validate identity Example",
+                  "",
+                  "If success === 0, return an error response with error_msg.",
+                  "",
+                  "If success === 1, do the following:",
+                  "   - The path should be data.data.validateUserIdentity",
+                  "   - Read data.validateUserIdentity.user_login_type inside user_details and auth_token.",
+                  "   - If data.validateUserIdentity.user_details.user_login_type === \"0\", return a response indicating show_password_input: true. Show the input password page",
+                  "   - If data.validateUserIdentity.user_details.user_login_type === \"3\", return a response indicating show_otp_input: true.Show the input OTP page",
+                  "   - Return the auth_token as part of the response, so it can be passed to the next step (e.g., password validation).",
+                  "   ",
+                  "",
+                  "Handle unexpected login_type cases with a generic error message.*/"
+                ],
+                "_lastExecutionId": "16f56ec5-b51b-4eae-acf9-15d8be65a33f"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "32d56452-756f-4c85-84e5-7f6ba8ac2ff3",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "0b5b66d9-5d54-4a72-bb90-77b6d3bd829c"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validateUserIdentity"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": ""
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "36695997-238d-4ac4-aecf-90059b031ba4",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "staging.getcompass.ai",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "75",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"variables\": {\n        \"user_input\": \"pavan+edit@xoxoday.com\"\n    }\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "1e625f2c-d21a-42a4-846b-a86d4f9afc7c",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Jul 2025 15:23:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "xoxo-tracer-id",
+              "value": "c6fc59b0-5da1-11f0-9314-216e87ef420d"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, a_t, Set-Cookie, lng, pltfm, hash, csrf"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "undefined"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"549-tTx1ZzzAY6tt1IEnqBayv3oLSNo\""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "95d10f6e18d047b9-BOM"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              123,
+              34,
+              118,
+              97,
+              108,
+              105,
+              100,
+              97,
+              116,
+              101,
+              85,
+              115,
+              101,
+              114,
+              73,
+              100,
+              101,
+              110,
+              116,
+              105,
+              116,
+              121,
+              34,
+              58,
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              49,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              115,
+              103,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              95,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              95,
+              112,
+              97,
+              114,
+              97,
+              109,
+              115,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              123,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              97,
+              118,
+              97,
+              110,
+              32,
+              49,
+              34,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              108,
+              111,
+              103,
+              105,
+              110,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              48,
+              34,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              115,
+              116,
+              101,
+              112,
+              115,
+              95,
+              99,
+              111,
+              109,
+              112,
+              108,
+              101,
+              116,
+              101,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              114,
+              111,
+              117,
+              116,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              125,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              95,
+              116,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              108,
+              98,
+              109,
+              77,
+              105,
+              79,
+              105,
+              74,
+              66,
+              77,
+              84,
+              73,
+              52,
+              81,
+              48,
+              74,
+              68,
+              76,
+              85,
+              104,
+              84,
+              77,
+              106,
+              85,
+              50,
+              73,
+              105,
+              119,
+              105,
+              89,
+              87,
+              120,
+              110,
+              73,
+              106,
+              111,
+              105,
+              82,
+              85,
+              78,
+              69,
+              83,
+              67,
+              49,
+              70,
+              85,
+              121,
+              73,
+              115,
+              73,
+              109,
+              116,
+              112,
+              90,
+              67,
+              73,
+              54,
+              73,
+              109,
+              86,
+              117,
+              89,
+              121,
+              73,
+              115,
+              73,
+              109,
+              86,
+              119,
+              97,
+              121,
+              73,
+              54,
+              101,
+              121,
+              74,
+              114,
+              100,
+              72,
+              107,
+              105,
+              79,
+              105,
+              74,
+              70,
+              81,
+              121,
+              73,
+              115,
+              73,
+              109,
+              78,
+              121,
+              100,
+              105,
+              73,
+              54,
+              73,
+              108,
+              65,
+              116,
+              77,
+              106,
+              85,
+              50,
+              73,
+              105,
+              119,
+              105,
+              101,
+              67,
+              73,
+              54,
+              73,
+              109,
+              74,
+              77,
+              99,
+              84,
+              70,
+              118,
+              82,
+              69,
+              70,
+              71,
+              100,
+              68,
+              90,
+              89,
+              90,
+              72,
+              108,
+              84,
+              99,
+              109,
+              86,
+              81,
+              101,
+              88,
+              90,
+              90,
+              86,
+              68,
+              104,
+              52,
+              79,
+              71,
+              74,
+              116,
+              82,
+              69,
+              107,
+              119,
+              85,
+              86,
+              70,
+              121,
+              89,
+              122,
+              104,
+              112,
+              83,
+              109,
+              49,
+              70,
+              78,
+              107,
+              78,
+              49,
+              86,
+              86,
+              107,
+              105,
+              76,
+              67,
+              74,
+              53,
+              73,
+              106,
+              111,
+              105,
+              86,
+              84,
+              104,
+              118,
+              82,
+              84,
+              100,
+              107,
+              83,
+              86,
+              86,
+              84,
+              90,
+              87,
+              112,
+              109,
+              87,
+              70,
+              78,
+              107,
+              100,
+              107,
+              112,
+              107,
+              83,
+              88,
+              70,
+              120,
+              99,
+              87,
+              53,
+              82,
+              86,
+              88,
+              100,
+              114,
+              98,
+              51,
+              66,
+              74,
+              83,
+              71,
+              90,
+              50,
+              83,
+              49,
+              86,
+              89,
+              90,
+              71,
+              90,
+              73,
+              97,
+              71,
+              53,
+              69,
+              77,
+              67,
+              74,
+              57,
+              102,
+              81,
+              46,
+              46,
+              45,
+              45,
+              98,
+              57,
+              106,
+              48,
+              88,
+              98,
+              71,
+              86,
+              98,
+              100,
+              55,
+              116,
+              120,
+              71,
+              75,
+              97,
+              118,
+              86,
+              119,
+              103,
+              46,
+              106,
+              78,
+              95,
+              66,
+              80,
+              108,
+              105,
+              121,
+              67,
+              78,
+              74,
+              78,
+              65,
+              83,
+              72,
+              65,
+              72,
+              87,
+              67,
+              49,
+              81,
+              72,
+              85,
+              89,
+              56,
+              54,
+              114,
+              50,
+              70,
+              103,
+              100,
+              120,
+              80,
+              104,
+              116,
+              73,
+              105,
+              68,
+              105,
+              103,
+              67,
+              119,
+              86,
+              72,
+              52,
+              53,
+              65,
+              122,
+              102,
+              103,
+              71,
+              57,
+              65,
+              53,
+              97,
+              117,
+              120,
+              70,
+              56,
+              81,
+              100,
+              57,
+              87,
+              65,
+              69,
+              85,
+              83,
+              66,
+              72,
+              116,
+              84,
+              80,
+              65,
+              82,
+              118,
+              99,
+              87,
+              56,
+              73,
+              121,
+              51,
+              120,
+              120,
+              106,
+              87,
+              117,
+              112,
+              49,
+              90,
+              80,
+              56,
+              113,
+              49,
+              103,
+              111,
+              100,
+              84,
+              49,
+              80,
+              72,
+              51,
+              81,
+              54,
+              68,
+              122,
+              122,
+              78,
+              66,
+              82,
+              114,
+              98,
+              55,
+              115,
+              98,
+              81,
+              79,
+              111,
+              102,
+              95,
+              107,
+              76,
+              99,
+              78,
+              49,
+              87,
+              53,
+              100,
+              71,
+              104,
+              89,
+              120,
+              84,
+              108,
+              51,
+              50,
+              107,
+              104,
+              100,
+              56,
+              78,
+              83,
+              116,
+              89,
+              102,
+              68,
+              104,
+              78,
+              53,
+              101,
+              77,
+              52,
+              73,
+              73,
+              51,
+              68,
+              84,
+              81,
+              72,
+              87,
+              116,
+              73,
+              71,
+              66,
+              118,
+              68,
+              70,
+              81,
+              110,
+              69,
+              95,
+              55,
+              86,
+              76,
+              115,
+              107,
+              69,
+              117,
+              49,
+              56,
+              80,
+              122,
+              102,
+              100,
+              67,
+              97,
+              117,
+              119,
+              109,
+              114,
+              100,
+              98,
+              122,
+              107,
+              120,
+              54,
+              99,
+              85,
+              74,
+              97,
+              107,
+              102,
+              90,
+              120,
+              71,
+              76,
+              101,
+              65,
+              98,
+              76,
+              82,
+              82,
+              102,
+              48,
+              52,
+              79,
+              48,
+              79,
+              117,
+              108,
+              114,
+              107,
+              120,
+              81,
+              70,
+              118,
+              110,
+              115,
+              106,
+              70,
+              85,
+              50,
+              114,
+              116,
+              67,
+              87,
+              50,
+              90,
+              102,
+              88,
+              80,
+              99,
+              65,
+              87,
+              122,
+              115,
+              66,
+              52,
+              108,
+              121,
+              75,
+              85,
+              111,
+              95,
+              99,
+              110,
+              68,
+              90,
+              100,
+              45,
+              53,
+              67,
+              69,
+              52,
+              117,
+              70,
+              89,
+              82,
+              119,
+              73,
+              99,
+              107,
+              80,
+              101,
+              88,
+              78,
+              98,
+              71,
+              71,
+              105,
+              99,
+              115,
+              53,
+              67,
+              65,
+              116,
+              107,
+              114,
+              65,
+              66,
+              68,
+              107,
+              50,
+              74,
+              73,
+              102,
+              70,
+              109,
+              85,
+              119,
+              120,
+              53,
+              83,
+              54,
+              73,
+              116,
+              76,
+              86,
+              105,
+              53,
+              67,
+              83,
+              120,
+              66,
+              79,
+              54,
+              102,
+              109,
+              97,
+              90,
+              83,
+              117,
+              72,
+              65,
+              66,
+              70,
+              112,
+              49,
+              54,
+              116,
+              101,
+              121,
+              79,
+              81,
+              109,
+              76,
+              119,
+              116,
+              79,
+              110,
+              119,
+              54,
+              69,
+              48,
+              122,
+              81,
+              80,
+              105,
+              54,
+              73,
+              73,
+              89,
+              113,
+              52,
+              71,
+              57,
+              76,
+              69,
+              72,
+              73,
+              85,
+              50,
+              97,
+              56,
+              108,
+              87,
+              57,
+              114,
+              77,
+              86,
+              45,
+              56,
+              99,
+              88,
+              98,
+              119,
+              74,
+              49,
+              67,
+              81,
+              118,
+              103,
+              72,
+              108,
+              112,
+              95,
+              104,
+              97,
+              120,
+              116,
+              102,
+              112,
+              67,
+              80,
+              75,
+              78,
+              75,
+              109,
+              118,
+              103,
+              51,
+              119,
+              51,
+              97,
+              83,
+              56,
+              65,
+              116,
+              110,
+              104,
+              108,
+              51,
+              122,
+              67,
+              101,
+              118,
+              114,
+              57,
+              101,
+              72,
+              52,
+              114,
+              121,
+              55,
+              82,
+              107,
+              95,
+              52,
+              107,
+              50,
+              50,
+              100,
+              82,
+              105,
+              107,
+              69,
+              102,
+              82,
+              82,
+              101,
+              53,
+              82,
+              50,
+              117,
+              50,
+              89,
+              120,
+              83,
+              107,
+              122,
+              74,
+              49,
+              51,
+              87,
+              97,
+              114,
+              113,
+              48,
+              107,
+              72,
+              51,
+              109,
+              54,
+              122,
+              109,
+              87,
+              86,
+              50,
+              87,
+              103,
+              85,
+              103,
+              52,
+              50,
+              70,
+              66,
+              87,
+              49,
+              89,
+              108,
+              70,
+              74,
+              83,
+              82,
+              100,
+              120,
+              48,
+              81,
+              110,
+              45,
+              110,
+              53,
+              109,
+              98,
+              85,
+              100,
+              116,
+              99,
+              76,
+              71,
+              103,
+              81,
+              106,
+              51,
+              66,
+              100,
+              53,
+              54,
+              67,
+              108,
+              80,
+              81,
+              110,
+              49,
+              72,
+              121,
+              89,
+              84,
+              106,
+              117,
+              112,
+              52,
+              68,
+              95,
+              88,
+              69,
+              65,
+              81,
+              74,
+              89,
+              80,
+              80,
+              87,
+              119,
+              75,
+              73,
+              71,
+              74,
+              89,
+              50,
+              48,
+              86,
+              108,
+              67,
+              95,
+              111,
+              51,
+              106,
+              115,
+              66,
+              70,
+              103,
+              109,
+              84,
+              50,
+              117,
+              117,
+              113,
+              109,
+              116,
+              122,
+              113,
+              76,
+              73,
+              73,
+              113,
+              80,
+              52,
+              113,
+              54,
+              122,
+              86,
+              68,
+              84,
+              48,
+              84,
+              98,
+              111,
+              82,
+              71,
+              66,
+              56,
+              84,
+              102,
+              117,
+              66,
+              99,
+              50,
+              82,
+              109,
+              52,
+              74,
+              119,
+              110,
+              106,
+              55,
+              82,
+              95,
+              118,
+              117,
+              49,
+              75,
+              116,
+              53,
+              84,
+              105,
+              105,
+              66,
+              49,
+              72,
+              110,
+              69,
+              110,
+              83,
+              71,
+              49,
+              118,
+              113,
+              120,
+              117,
+              95,
+              121,
+              54,
+              100,
+              121,
+              78,
+              118,
+              115,
+              107,
+              71,
+              120,
+              95,
+              102,
+              112,
+              115,
+              65,
+              72,
+              113,
+              87,
+              49,
+              118,
+              100,
+              49,
+              88,
+              109,
+              115,
+              111,
+              98,
+              68,
+              80,
+              121,
+              49,
+              65,
+              103,
+              52,
+              78,
+              77,
+              114,
+              117,
+              69,
+              53,
+              100,
+              78,
+              67,
+              72,
+              97,
+              88,
+              80,
+              99,
+              75,
+              45,
+              111,
+              100,
+              54,
+              104,
+              109,
+              102,
+              89,
+              120,
+              113,
+              106,
+              95,
+              118,
+              95,
+              84,
+              88,
+              100,
+              66,
+              109,
+              122,
+              45,
+              74,
+              51,
+              102,
+              105,
+              121,
+              84,
+              121,
+              80,
+              57,
+              103,
+              65,
+              79,
+              105,
+              119,
+              52,
+              79,
+              88,
+              89,
+              56,
+              85,
+              119,
+              66,
+              108,
+              82,
+              49,
+              121,
+              108,
+              109,
+              105,
+              118,
+              95,
+              109,
+              99,
+              56,
+              67,
+              110,
+              83,
+              52,
+              115,
+              80,
+              69,
+              78,
+              120,
+              107,
+              49,
+              90,
+              85,
+              57,
+              51,
+              108,
+              106,
+              101,
+              99,
+              69,
+              98,
+              82,
+              52,
+              46,
+              104,
+              122,
+              81,
+              52,
+              99,
+              54,
+              74,
+              78,
+              69,
+              102,
+              52,
+              51,
+              101,
+              119,
+              85,
+              77,
+              86,
+              76,
+              119,
+              82,
+              114,
+              65,
+              34,
+              125,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 729,
+          "responseSize": 1353
+        },
+        "id": "311d7ef1-4022-4b36-8687-3e5f8fe0b308"
+      },
+      {
+        "cursor": {
+          "ref": "dd58fa20-fd25-42e6-8042-38db1ea14609",
+          "length": 5,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "60bab1ba-6999-448b-a1b5-4d8805910d25"
+        },
+        "item": {
+          "id": "dd06b5d5-afa6-442c-8b0c-f73d01543921",
+          "name": "validatePassword",
+          "request": {
+            "description": {
+              "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "chef",
+                "api",
+                "public",
+                "validatePassword"
+              ],
+              "host": [
+                "staging",
+                "getcompass",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "a_t",
+                "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+              },
+              {
+                "key": "Referer",
+                "value": ""
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+              },
+              {
+                "key": "lng",
+                "value": "en"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "pltfm",
+                "value": "8"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"variables\":{\"password\":\"Test@123\"}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "363f95b8-d406-463a-acbb-0dc520de6ae0",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "// Make sure when the Validate Password API is called, send the header pltfm === 10",
+                  "// For encoding password use btoa",
+                  "//Handle Validate Password Response:",
+                  "//  The path should be data.data.validatePassword",
+                  "// - If success === 0  inside validatePassword in data           ",
+                  "//     → Show error: \"Invalid Password\"",
+                  "//     → Stay on the same page",
+                  "// - If success === 1 inside validatePassword in data          ",
+                  "//     → Login successful",
+                  "//     → Store the generated token",
+                  "//     → Use this token in the next API call to fetch User Details",
+                  "//     → Redirect the user to the Home page",
+                  ""
+                ],
+                "_lastExecutionId": "924cb3e2-6921-4405-9e00-00f3e7908237"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "description": {
+            "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validatePassword"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "27c30868-237a-45f3-8cab-f8c0fb3af133",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "staging.getcompass.ai",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "37",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"variables\":{\"password\":\"Test@123\"}}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "6af9cb46-b67c-4e9f-a9a6-8da8e82f6966",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Jul 2025 15:23:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "xoxo-tracer-id",
+              "value": "c72cdf90-5da1-11f0-87dc-8fd43efaac81"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, a_t, Set-Cookie, lng, pltfm, hash, csrf"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "undefined"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"26d-T5gzKCLfoE1+sLHw6H5YwR/lqWA\""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "95d10f727d2a47b9-BOM"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              123,
+              34,
+              118,
+              97,
+              108,
+              105,
+              100,
+              97,
+              116,
+              101,
+              80,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              34,
+              58,
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              85,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              32,
+              38,
+              32,
+              80,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              32,
+              100,
+              111,
+              32,
+              110,
+              111,
+              116,
+              32,
+              109,
+              97,
+              116,
+              99,
+              104,
+              33,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              114,
+              80,
+              119,
+              100,
+              78,
+              111,
+              116,
+              77,
+              97,
+              116,
+              99,
+              104,
+              69,
+              114,
+              114,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              85,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              32,
+              38,
+              32,
+              80,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              32,
+              100,
+              111,
+              32,
+              110,
+              111,
+              116,
+              32,
+              109,
+              97,
+              116,
+              99,
+              104,
+              33,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              95,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              95,
+              112,
+              97,
+              114,
+              97,
+              109,
+              115,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              123,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              108,
+              111,
+              103,
+              105,
+              110,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              97,
+              99,
+              116,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              109,
+              105,
+              100,
+              100,
+              108,
+              101,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              110,
+              116,
+              105,
+              116,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              101,
+              110,
+              116,
+              105,
+              116,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              95,
+              105,
+              109,
+              97,
+              103,
+              101,
+              95,
+              100,
+              112,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              95,
+              105,
+              109,
+              97,
+              103,
+              101,
+              95,
+              99,
+              111,
+              118,
+              101,
+              114,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              97,
+              99,
+              99,
+              101,
+              115,
+              115,
+              95,
+              114,
+              111,
+              108,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              110,
+              118,
+              101,
+              114,
+              115,
+              105,
+              111,
+              110,
+              95,
+              102,
+              97,
+              99,
+              116,
+              111,
+              114,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              97,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              115,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              116,
+              122,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              104,
+              111,
+              109,
+              101,
+              112,
+              97,
+              103,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              125,
+              125,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 291,
+          "responseSize": 621
+        },
+        "id": "dd06b5d5-afa6-442c-8b0c-f73d01543921"
+      },
+      {
+        "cursor": {
+          "ref": "53cf485b-b3e9-495a-a8d7-c9ab01d455ef",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "65ff479a-a3ee-4a26-9e26-20b29f85ed9d"
+        },
+        "item": {
+          "id": "b624009d-3bf3-458f-924c-2de847c77ac6",
+          "name": "validateOtp",
+          "request": {
+            "description": {
+              "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "chef",
+                "api",
+                "public",
+                "validateOtp"
+              ],
+              "host": [
+                "staging",
+                "getcompass",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "a_t",
+                "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+              },
+              {
+                "key": "Referer",
+                "value": ""
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+              },
+              {
+                "key": "lng",
+                "value": "en"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "pltfm",
+                "value": "8"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"variables\":{\"otp\":66666}}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "363f95b8-d406-463a-acbb-0dc520de6ae0",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "// Handle Validate Password Response:",
+                  "// - If success === 0  inside validateUPassword in data           ",
+                  "//     → Show error: \"Invalid Password\"",
+                  "//     → Stay on the same page",
+                  "// - If success === 1 inside validateUPassword in data          ",
+                  "//     → Login successful",
+                  "//     → Store the generated token",
+                  "//     → Use this token in the next API call to fetch User Details",
+                  "//     → Redirect the user to the Home page",
+                  ""
+                ],
+                "_lastExecutionId": "a86ae4b6-cec0-43ce-a0ef-7d97bfdd3660"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "description": {
+            "content": "Generated from cURL: curl 'https://staging.getcompass.ai/chef/api/public/validatePassword' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'a_t: eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ' \\\n  -H 'Referer;' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'lng: en' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'Content-Type: application/json' \\\n  -H 'pltfm: 8' \\\n  --data-raw '{\"variables\":{\"password\":\"VGVzdEAxMjM=\"}}'",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "public",
+              "validateOtp"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "a_t",
+              "value": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiRUNESC1FUyIsImtpZCI6ImVuYyIsImVwayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6ImxUYXNyWXo3UW1RaXNzdHBxbkJUT2l5UTlmRkVWUFpMTTBBb1VuREhTZlEiLCJ5IjoiM2NhcGZBTkVkTVY5WjctQ2J4ZU04T2xtelRzVGNkcDhTSmN3UWFLbWtUQSJ9fQ..ER5A8_ru2VmNcNBHixMY_A.Fj3ykaWAN_Rw_yNRK9GBL194h9cTyPugaZ5BeQJsgo6E6RfLpcvDj05c7VG6QGraAvADmaMMhj2hfYP5ovfMfEyDdqPh_fmoWfiGoz4d_AsAQ8xSLJ75amHO5etfcs_tgO5ebrSOEARP4XwZBOMGoe4JFuLuvU8JH0QelKLqQ5yrhfQQqIGD9xehjq28P3ARDK9lEFor2j1LCwSsnh5LsvJR3McGzVFKFI-3QZqH4VOxABgbuYrjxbVfs231Q8gBWVxVUhl6B0oq3xUhKdkSNdTTRUz3YtxepWyvh5OGQTVZ78q3cKL9LaAXGi6SEdB7J4UuGBJ3yiEk5CJdFJoyiiXaMJfgam0j38B3d2heZFMGZtGVSCMyD7ZhQc4nZCFIoTnWjSqLL085-vgekVr6pjF-HmdPE6qG0IENqVbNFedmVXi7JkD8j1S7LJSg1oRXkzJY7zkw_sw2K8vOLUGBfGBfl891eB0_kbqb2e1JZXQIqr8x7Bqx8BjOYOfiNnbxus8zVpNYVKQYyTpiT2opc_-1ji3Sj2QT6pUfTsL7pFBouM8JY5yvj-MDpHINmHs9DOHOC7PPCh34CZfzAflVVsE8-L5lW4nYHFd0Yb-oYL5fJOSQv09X8vuGeWg3VXwtY8iNxJwGgxCgUg6aJIyf9QhaEI2rJx7AOlRWmqPCQpfZRCFY0Y-tIFHnG4LhJq2N7fMdEnH3zGGFlfGvZV-fpbMXGyDaYCBUatUJIGod5zA.vQhR63zkj-RZLSFXGCXlzQ"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "302a149d-ba29-43ee-8cc2-f848e2bc3506",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "staging.getcompass.ai",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "27",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"variables\":{\"otp\":66666}}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "54ba84a8-5c50-4810-be44-cf588db5f2f1",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Jul 2025 15:23:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "xoxo-tracer-id",
+              "value": "c75b1b80-5da1-11f0-9314-216e87ef420d"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, a_t, Set-Cookie, lng, pltfm, hash, csrf"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "undefined"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"201-Prv7d+9HCLi9aZ/AViLE/BEmUDQ\""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "95d10f745f2147b9-BOM"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              123,
+              34,
+              118,
+              97,
+              108,
+              105,
+              100,
+              97,
+              116,
+              101,
+              79,
+              116,
+              112,
+              34,
+              58,
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              101,
+              114,
+              114,
+              109,
+              115,
+              103,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              73,
+              110,
+              118,
+              97,
+              108,
+              105,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              101,
+              115,
+              116,
+              32,
+              100,
+              97,
+              116,
+              97,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              114,
+              114,
+              99,
+              111,
+              100,
+              101,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              123,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              108,
+              111,
+              103,
+              105,
+              110,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              97,
+              99,
+              116,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              109,
+              105,
+              100,
+              100,
+              108,
+              101,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              110,
+              116,
+              105,
+              116,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              101,
+              110,
+              116,
+              105,
+              116,
+              121,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              95,
+              105,
+              109,
+              97,
+              103,
+              101,
+              95,
+              100,
+              112,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              95,
+              105,
+              109,
+              97,
+              103,
+              101,
+              95,
+              99,
+              111,
+              118,
+              101,
+              114,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              97,
+              99,
+              99,
+              101,
+              115,
+              115,
+              95,
+              114,
+              111,
+              108,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              110,
+              118,
+              101,
+              114,
+              115,
+              105,
+              111,
+              110,
+              95,
+              102,
+              97,
+              99,
+              116,
+              111,
+              114,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              97,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              115,
+              100,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              116,
+              122,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              99,
+              111,
+              109,
+              112,
+              97,
+              110,
+              121,
+              95,
+              104,
+              111,
+              109,
+              101,
+              112,
+              97,
+              103,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              125,
+              125,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 236,
+          "responseSize": 513
+        },
+        "id": "b624009d-3bf3-458f-924c-2de847c77ac6"
+      },
+      {
+        "cursor": {
+          "ref": "7eb587e0-a03b-4fde-9910-258709d9e213",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "dad3c3fd-7f42-4e5d-a6e0-b7f1e9f01048"
+        },
+        "item": {
+          "id": "0dd7e18a-7b67-48da-8681-28d1fbaad77f",
+          "name": "User details",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "chef",
+                "api",
+                "graph",
+                "admin"
+              ],
+              "host": [
+                "staging",
+                "getcompass",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "Referer",
+                "value": ""
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+              },
+              {
+                "key": "lng",
+                "value": "en"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "pltfm",
+                "value": "8"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\":\"admin.query.personaldetail_query_fetch_encoded\",\"tag\":\"admin\",\"variables\":{\"add_data\":\"\"}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "bd9c0f2b-4fe2-437f-bcf4-bbbb984e0804",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "// Make sure when the User details API is called, send the header pltfm === 10",
+                  "// On \"My Profile\" click:",
+                  "// → Call the User Details API",
+                  "// → Pass the stored token (from Validate Password API) in the request header or body as required",
+                  "// → If token is invalid or expired:",
+                  "//     → Show error: \"Session expired, please log in again\"",
+                  "// → If token is valid and user details are returned:",
+                  "//     → Display user profile information",
+                  ""
+                ],
+                "_lastExecutionId": "50454037-5d55-4ef2-8d53-1153818c1cca"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "chef",
+              "api",
+              "graph",
+              "admin"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "78b48eb0-d0e3-448c-96c4-aea7ef4f741f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "staging.getcompass.ai",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "100",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"query\":\"admin.query.personaldetail_query_fetch_encoded\",\"tag\":\"admin\",\"variables\":{\"add_data\":\"\"}}"
+          }
+        },
+        "response": {
+          "id": "2399f330-f903-4b3c-a7b5-3aa3683bee9d",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Jul 2025 15:23:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "51"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "xoxo-tracer-id",
+              "value": "c780f300-5da1-11f0-87dc-8fd43efaac81"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Content-Type, Accept, a_t, Set-Cookie, lng, pltfm, hash, csrf"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "undefined"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"33-UyLO22XwrSQfpFIeCYRSqtQsKN4\""
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "95d10f75e89547b9-BOM"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              95,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              97,
+              117,
+              116,
+              104,
+              46,
+              116,
+              111,
+              107,
+              101,
+              110,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 221,
+          "responseSize": 51
+        },
+        "id": "0dd7e18a-7b67-48da-8681-28d1fbaad77f"
+      },
+      {
+        "cursor": {
+          "ref": "9e485a4a-5e87-4e2b-951c-86faafeabf0b",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "d7f6e7f1-0864-4a69-b6ba-a3f9c2a0a084"
+        },
+        "item": {
+          "id": "78d34398-4e1d-471d-a736-e21f76bcfd60",
+          "name": "user logout",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "logout"
+              ],
+              "host": [
+                "staging",
+                "getcompass",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "accept",
+                "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+              },
+              {
+                "key": "accept-language",
+                "value": "en-GB,en;q=0.9"
+              },
+              {
+                "key": "priority",
+                "value": "u=0, i"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"macOS\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "document"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "navigate"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin"
+              },
+              {
+                "key": "sec-fetch-user",
+                "value": "?1"
+              },
+              {
+                "key": "upgrade-insecure-requests",
+                "value": "1"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "lng",
+                "value": "en"
+              },
+              {
+                "key": "origin",
+                "value": "https://staging.getcompass.ai"
+              },
+              {
+                "key": "pltfm",
+                "value": "8"
+              },
+              {
+                "key": "Referer",
+                "value": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "if-modified-since",
+                "value": "Wed, 09 Jul 2025 07:24:08 GMT"
+              },
+              {
+                "key": "if-none-match",
+                "value": "W/\"bed-197ee1205c0\""
+              },
+              {
+                "key": "hash",
+                "value": "acc6af62a9fa38a0431edac1dee2b8f1516c9633"
+              },
+              {
+                "key": "Origin",
+                "value": "https://staging.getcompass.ai"
+              },
+              {
+                "key": "sec-fetch-storage-access",
+                "value": "none"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "fb888f40-60d6-44c0-9cf3-a327fdd1d42f",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "// Make sure when the User details API is called, send the header pltfm === 10",
+                  "// On \"Log Out\" click:",
+                  "// → Call the User Details API",
+                  "// → Pass the stored token (from Validate Password API) in the request header or body as required",
+                  "// → If token is invalid or expired:",
+                  "//     → Show error: \"Session expired, please log in again\"",
+                  "// → If token is valid and user details are returned:",
+                  "//     → Display user profile information"
+                ],
+                "_lastExecutionId": "362fce41-9701-4791-8d1e-890555fb7b8f"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "logout"
+            ],
+            "host": [
+              "staging",
+              "getcompass",
+              "ai"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+            },
+            {
+              "key": "accept-language",
+              "value": "en-GB,en;q=0.9"
+            },
+            {
+              "key": "priority",
+              "value": "u=0, i"
+            },
+            {
+              "key": "sec-ch-ua",
+              "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+            },
+            {
+              "key": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "key": "sec-ch-ua-platform",
+              "value": "\"macOS\""
+            },
+            {
+              "key": "sec-fetch-dest",
+              "value": "document"
+            },
+            {
+              "key": "sec-fetch-mode",
+              "value": "navigate"
+            },
+            {
+              "key": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "key": "sec-fetch-user",
+              "value": "?1"
+            },
+            {
+              "key": "upgrade-insecure-requests",
+              "value": "1"
+            },
+            {
+              "key": "user-agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "lng",
+              "value": "en"
+            },
+            {
+              "key": "origin",
+              "value": "https://staging.getcompass.ai"
+            },
+            {
+              "key": "pltfm",
+              "value": "8"
+            },
+            {
+              "key": "Referer",
+              "value": ""
+            },
+            {
+              "key": "User-Agent",
+              "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+            },
+            {
+              "key": "if-modified-since",
+              "value": "Wed, 09 Jul 2025 07:24:08 GMT"
+            },
+            {
+              "key": "if-none-match",
+              "value": "W/\"bed-197ee1205c0\""
+            },
+            {
+              "key": "hash",
+              "value": "acc6af62a9fa38a0431edac1dee2b8f1516c9633"
+            },
+            {
+              "key": "Origin",
+              "value": "https://staging.getcompass.ai"
+            },
+            {
+              "key": "sec-fetch-storage-access",
+              "value": "none"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "1f8b44a8-bcd4-4df2-b39b-49ea03472ec2",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "staging.getcompass.ai",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "2",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{}"
+          }
+        },
+        "response": {
+          "id": "0296233e-cc98-4cb7-858a-32711ecf3199",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 10 Jul 2025 15:23:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/html; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "content-security-policy",
+              "value": "default-src 'none'"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "expect-ct",
+              "value": "max-age=0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "key": "referrer-policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "95d10f7769fb47b9-BOM"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              60,
+              33,
+              68,
+              79,
+              67,
+              84,
+              89,
+              80,
+              69,
+              32,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10,
+              60,
+              104,
+              116,
+              109,
+              108,
+              32,
+              108,
+              97,
+              110,
+              103,
+              61,
+              34,
+              101,
+              110,
+              34,
+              62,
+              10,
+              60,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              109,
+              101,
+              116,
+              97,
+              32,
+              99,
+              104,
+              97,
+              114,
+              115,
+              101,
+              116,
+              61,
+              34,
+              117,
+              116,
+              102,
+              45,
+              56,
+              34,
+              62,
+              10,
+              60,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              69,
+              114,
+              114,
+              111,
+              114,
+              60,
+              47,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              10,
+              60,
+              47,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              112,
+              114,
+              101,
+              62,
+              67,
+              97,
+              110,
+              110,
+              111,
+              116,
+              32,
+              80,
+              79,
+              83,
+              84,
+              32,
+              47,
+              108,
+              111,
+              103,
+              111,
+              117,
+              116,
+              60,
+              47,
+              112,
+              114,
+              101,
+              62,
+              10,
+              60,
+              47,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              47,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10
+            ]
+          },
+          "cookie": [],
+          "responseTime": 235,
+          "responseSize": 146
+        },
+        "id": "78d34398-4e1d-471d-a736-e21f76bcfd60"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 2684
+    },
+    "failures": [],
+    "error": null
+  }
+}
