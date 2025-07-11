@@ -26,34 +26,23 @@ export default function HomeScreen({ route, navigation }: HomeScreenProps) {
       <StatusBar barStyle="dark-content" backgroundColor="#CFD7E2" />
       
       {/* Background Image */}
-      <Image source={require('../../assets/home-bg-image.png')} style={styles.backgroundImage} />
+      <Image source={require('../../assets/updated-home-bg-image.png')} style={styles.backgroundImage} />
       
-      {/* Status Bar */}
-      <View style={styles.statusBar}>
-        <Text style={styles.timeText}>9:41</Text>
-        <View style={styles.statusIcons}>
-          {/* Cellular, WiFi, Battery icons would go here - simplified for now */}
-          <View style={styles.cellularIcon} />
-          <View style={styles.wifiIcon} />
-          <View style={styles.batteryIcon} />
+      {/* Centered Container */}
+      <View style={styles.centeredContainer}>
+        {/* Header Section */}
+        <View style={styles.header}>
+          {/* Logo */}
+          <View style={styles.logoContainer}>
+            <Image source={require('../../assets/home-logo.png')} style={styles.logo} resizeMode="contain" />
+          </View>
+          
+          {/* Profile Button */}
+          <TouchableOpacity style={styles.profileButton} onPress={handleProfileClick}>
+            <Text style={styles.profileButtonText}>Hey Partner, click to view your Profile</Text>
+          </TouchableOpacity>
         </View>
       </View>
-
-      {/* Header Section */}
-      <View style={styles.header}>
-        {/* Logo */}
-        <View style={styles.logoContainer}>
-          <Image source={require('../../assets/home-logo.png')} style={styles.logo} resizeMode="contain" />
-        </View>
-        
-        {/* Profile Button */}
-        <TouchableOpacity style={styles.profileButton} onPress={handleProfileClick}>
-          <Text style={styles.profileButtonText}>Hey Partner, Click to view Profile</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Empty Frame for additional content */}
-      <View style={styles.contentFrame} />
     </SafeAreaView>
   );
 }
@@ -70,60 +59,18 @@ const styles = StyleSheet.create({
     width: 652,
     height: 632,
   },
-  statusBar: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: 375,
-    height: 44,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  centeredContainer: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 21,
-    paddingTop: 7,
-  },
-  timeText: {
-    fontFamily: 'SF Pro Text',
-    fontWeight: '600',
-    fontSize: 15,
-    lineHeight: 20,
-    letterSpacing: -0.24,
-    color: '#041A2F',
-    textAlign: 'center',
-  },
-  statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-  },
-  cellularIcon: {
-    width: 17,
-    height: 10.67,
-    backgroundColor: '#041A2F',
-    borderRadius: 1,
-  },
-  wifiIcon: {
-    width: 15.33,
-    height: 11,
-    backgroundColor: '#041A2F',
-    borderRadius: 1,
-  },
-  batteryIcon: {
-    width: 24.33,
-    height: 11.33,
-    backgroundColor: '#041A2F',
-    borderRadius: 2.67,
-    borderWidth: 1,
-    borderColor: '#041A2F',
+    paddingHorizontal: 16,
   },
   header: {
-    paddingTop: 60,
-    paddingHorizontal: 16,
-    paddingBottom: 24,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 24,
-    width: 375,
+    width: '100%',
+    maxWidth: 375,
   },
   logoContainer: {
     width: 279,
@@ -142,7 +89,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'stretch',
+    width: '100%',
+    alignSelf: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -159,11 +107,5 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#FFFFFF',
     textAlign: 'center',
-  },
-  contentFrame: {
-    flex: 1,
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    gap: 12,
   },
 }); 
