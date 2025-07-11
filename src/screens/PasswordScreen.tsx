@@ -108,7 +108,7 @@ export default function PasswordScreen({ route, navigation }: PasswordScreenProp
         {/* Welcome Text */}
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeText}>
-            Welcome to{'\n'}Channel Partner App
+            Welcome to {'\n'}Channel Partner App
           </Text>
         </View>
       </View>
@@ -165,13 +165,6 @@ export default function PasswordScreen({ route, navigation }: PasswordScreenProp
               </Text>
             </TouchableOpacity>
           </View>
-        </View>
-
-        {/* Terms Text */}
-        <View style={styles.termsContainer}>
-          <Text style={styles.termsText}>
-            By signing in you agree with our Terms of Service and accept our Privacy Policy
-          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -240,6 +233,8 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     gap: 4,
+    width: 335,
+    alignSelf: 'center',
   },
   title: {
     fontFamily: 'Inter',
@@ -276,6 +271,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     color: '#394960',
+    paddingHorizontal: 2,
   },
   inputWrapper: {
     borderWidth: 1,
